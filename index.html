@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<!-- head -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MSc Finance & Big Data - Data visualization 2023</title>
+
+  <!-- bulma and font awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" crossorigin="anonymous">
+</head>
+
+<!-- body -->
+<body>
+
+  <!-- header -->
+  <section class="hero is-info is-bold">
+    <!-- todo: change assignment and name -->
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Data Visualization Assignment
+        </h1>
+        <h2 class="subtitle">
+          DRAY Benjamin
+        </h2>
+      </div>
+    </div>
+
+    <!-- change navigation if needed -->
+    <div class="hero-foot">
+      <div class="container">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+
+          <div class="navbar-brand">
+            <a class="navbar-item" href="#top">
+              <span class="icon">
+                <i class="fas fa-home"></i>
+              </span>
+              <span>Home</span>
+            </a>
+          </div>
+
+          <div id="main-navbar" class="navbar-menu">
+            <a class="navbar-item" href="#viz1">
+              <span class="icon">
+                <i class="fas fa-chart-area"></i>
+              </span>
+              <span>Visualization 1</span>
+            </a>
+          </div>
+
+          <div class="navbar-end">
+            <a class="navbar-item" href="#about">
+              <span class="icon">
+                <i class="fas fa-info-circle"></i>
+              </span>
+              <span>About</span>
+            </a>
+          </div>
+
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content">
+      <!-- modify if necessary (move visualizations in separate pages) -->
+      <h2 id="viz1">Visualization 1</h2>
+
+      <iframe src="Predictions_vs_Real.html" style="width:100%; height:500px; border:none;"></iframe>
+      This graph juxtaposes the predicted values of the S&P 500 (dotted blue line) with the actual values (green line), allowing for a direct comparison of the prediction model's performance. 
+      The addition of a histogram of residuals (red bars) on a secondary axis provides an instant view of the discrepancies between predictions and actual values. 
+      Significant residuals indicate where the model is less accurate, providing insights into the performance and reliability of the model across different time intervals.<br>
+      <iframe src="Residuals Analysis.html" style="width:100%; height:500px; border:none;"></iframe>
+      The scatter plot displays the residuals (the difference between predicted and actual values) on the vertical axis against dates on the horizontal axis. 
+      The residuals are colored green for positive values and red for negative values, allowing for a quick visual distinction between model underestimations and overestimations.
+      A trendline is also added to show the average evolution of the residuals over a 30-day moving window, providing a visual indication of any persistent trend in the residuals over time.<br>
+      Adjacent to the scatter plot, the residual histogram reveals the distribution of discrepancies between predicted and actual values.<br><br>
+      <iframe src="ACF_PACF.html" style="width:100%; height:500px; border:none;"></iframe>
+      For each asset, an ACF (AutoCorrelation Function) plot is drawn, illustrating how current values of the asset are correlated with its past values up to 40 time lags. 
+      These plots show the strength and duration of autocorrelation for each asset.<br>
+      The PACF (Partial AutoCorrelation Function) plots show the partial autocorrelation for each asset, meaning the autocorrelation for a specific number of lags, while removing the influence of intermediate lags. 
+      They are essential for identifying the direct relationship between current values and their past values at different time intervals.
+      <iframe src="PCA.html" style="width:100%; height:500px; border:none;"></iframe>
+      The biplot of Principal Component Analysis (PCA) illustrates the dimensional reduction of financial data into two principal components, PC1 and PC2.<br>
+      PC1, the horizontal axis, captures the largest share of variance in the data, while PC2, the vertical axis, captures the second largest share. The blue points represent individual observations in this reduced space, where proximity suggests similar performance characteristics among assets. <br>
+      The red arrows indicate the influence and direction of the original variables.
+      The length of each arrow denotes the strength of the variable's impact on the components, with longer arrows indicating greater influence. The orientation of the arrows demonstrates the correlation between variables: arrows pointing in similar directions indicate positive correlation, while arrows in opposite directions reveal negative correlation. <br>
+      <iframe src="Dynamic Correlation with Gold.html" style="width:100%; height:500px; border:none;"></iframe>
+      This dynamic plot explores the evolving correlation between different financial indices and gold over a specified period. 
+      It utilizes bubbles whose size varies based on the magnitude of the correlation, providing a visual representation of how the relationship between these assets and gold changes over time. 
+      A larger bubble indicates a stronger correlation.<br>
+      <iframe src="Arch.html" style="width:100%; height:500px; border:none;"></iframe>
+      This graph illustrates the volatility of returns for various indices and financial assets, as modeled by ARCH (Autoregressive Conditional Heteroskedasticity) models. 
+      It shows both the logarithmic returns and conditional volatility for each instrument.
+      <br>
+    </div>
+
+      <h3>Discussion</h3>
+
+      <p>
+        <br> An important aspect of this work has been data management, including the removal of NaN values, to ensure the reliability and accuracy of analyses. <br>
+        Each visualization, whether comparing predictions to actual values, examining dynamic correlations, visualizing volatility, or analyzing residuals, contributes to a better understanding of trends and behaviors in the financial market.<br>
+        Creating these visualizations involved challenges such as presenting complex information in a clear and intuitive manner, using effective visual design and distinct colors to facilitate interpretation.
+        <br><br><br>
+      </p>
+
+      <h3>Sources</h3>
+
+      <p>
+
+
+#output Visualization on the link
+        
+      </p>
+    </div>
+  </section>
+
+  <hr class="container">
+
+  <!-- about section -->
+  <!-- fill in, or link to a personal web page  -->
+  <section class="section">
+    <div class="container content">
+      <h2 id="about">
+        About Me
+      </h2>
+
+      <div class="media">
+        <div class="media-left">
+          <p class="image is-128x128">
+            <!-- replace with your profile image -->
+            <img src="Benjamin.png">
+          </p>
+        </div>
+
+        <div class="media-content">
+            <p>
+              <!-- replace with your information -->
+              <strong>My name</strong>
+              <br/>
+              I am currently an apprentice at Allianz, working as a Fund Selection Analyst, a role that aligns perfectly with my keen interest in asset management. This sector captivates me, and I am dedicated to building a career in it.<br>
+              My strong aptitude for finance and coding is pivotal in today's technological landscape. I am especially passionate about integrating my programming skills to enhance financial analysis and decision-making processes. <br>
+              Personally, I enjoy football and swimming, activities that provide me with balance and energize my professional pursuits.<br/>
+              <!-- find brand icons at: https://fontawesome.com/icons?d=gallery&s=brands&m=free -->
+              <a href="https://github.com/BenjaminDray92">
+                <span class="fab fa-github"></span>
+                <span>Github</span>
+              </a>
+              &bullet;
+              <a href="https://www.linkedin.com/in/benjamindray14/">
+                <span class="fab fa-linkedin"></span>
+                <span>LinkedIn</span>
+              </a>
+            </p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <small>
+        <a href="#top">
+          <span class="fas fa-arrow-up"></span>
+          <span>Back to Top</span>
+        </a>
+        <br/>
+        <a href="https://www.neoma-bs.fr/formations/masteres-specialises-masters-of-science-temps-partiel/msc-in-finance-and-big-data/presentation-du-programme">MSc Finance & Big Data / Data visualization</a>
+        &bullet;
+        <a href="https://https://www.neoma-bs.fr/">Neoma Business School</a>
+      </small>
+    </div>
+  </footer>
+
+</body>
+</html>
